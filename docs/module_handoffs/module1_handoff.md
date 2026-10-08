@@ -1,4 +1,4 @@
-# Handoff Notes — Student 1 to Student 2
+# Handoff Notes — Module 1 to Module 2
 
 ## Delivered Files
 
@@ -44,7 +44,7 @@
 | PALB2 | 30 |
 | TP53 | 30 |
 
-## Important Notes for Student 2
+## Important Notes for Module 2
 
 ### DO NOT use:
 - QUAL filter — not present in ClinVar

@@ -1,24 +1,24 @@
 #!/usr/bin/env bash
 # =============================================================================
-# Student 1 Workflow — ClinVar Breast Cancer Panel Preparation
+# Module 1 Workflow — ClinVar Breast Cancer Panel Preparation
 # =============================================================================
 #
 # Project  : A Reproducible Workflow for Prioritizing Cancer-Associated
 #            Variants Using ClinVar and gnomAD
-# Author   : Student 1
+# Author   : Module 1
 # Date     : 2026-09-27
 # Genome   : GRCh38
 # Genes    : BRCA1, BRCA2, PALB2, TP53
 # Tools    : bcftools 1.24, htslib 1.24, tabix 1.24, Python 3.14.7
 #
 # Purpose:
-#   This script performs the complete Student 1 workflow:
+#   This script performs the complete Module 1 workflow:
 #     1. Download ClinVar GRCh38 VCF
 #     2. Extract four target gene regions
 #     3. Apply clinical filter (CLNSIG)
 #     4. Create balanced teaching subset (120 variants)
 #     5. Generate statistics and documentation
-#     6. Create handoff archive for Student 2
+#     6. Create handoff archive for Module 2
 #
 # Usage:
 #   bash scripts/student1_workflow.sh
@@ -232,7 +232,7 @@ cat "$DOCS_DIR/software_versions.txt"
 # -----------------------------------------------------------------------------
 # Step 8: Create handoff archive
 # -----------------------------------------------------------------------------
-section "Step 8: Create handoff archive for Student 2"
+section "Step 8: Create handoff archive for Module 2"
 
 tar -czvf student1_handoff.tar.gz \
   "$PROCESSED_DIR/breast_cancer_small_ClinVar_GRCh38.vcf.gz" \
@@ -249,13 +249,13 @@ tar -tzvf student1_handoff.tar.gz
 # -----------------------------------------------------------------------------
 # Done
 # -----------------------------------------------------------------------------
-section "Student 1 workflow completed successfully"
+section "Module 1 workflow completed successfully"
 log "End time: $(date '+%Y-%m-%d %H:%M:%S')"
 log "Output directory: $PROCESSED_DIR"
 log "Handoff archive: $PROJECT_ROOT/student1_handoff.tar.gz"
 
 echo ""
-echo "Next step for Student 2:"
+echo "Next step for Module 2:"
 echo "  - Normalize variants with bcftools norm"
 echo "  - Match gnomAD using CHROM + POS + REF + ALT"
 echo "  - Run prioritization scoring"

@@ -1,6 +1,6 @@
 # Methods
 
-**Student 1 — Dataset Preparation, VCF Inspection, Validation, Filtering, and Initial QC**
+**Module 1 — Dataset Preparation, VCF Inspection, Validation, Filtering, and Initial QC**
 
 ---
 
@@ -30,7 +30,7 @@ The breast-cancer panel was selected, containing four genes: BRCA1, BRCA2, PALB2
 | Release | v4.1 |
 | Assembly | GRCh38 |
 | Fields | AF, AC, AN |
-| Use | Population-frequency evidence (Student 2) |
+| Use | Population-frequency evidence (Module 2) |
 
 ---
 
@@ -170,7 +170,7 @@ To reproduce from scratch:
 - GENEINFO may include overlapping gene annotations.
 - The 120-variant subset is a representative teaching sample.
 - gnomAD population-frequency information is not included at this stage.
-- No variant normalization was applied — this is Student 2's task.
+- No variant normalization was applied — this is Module 2's task.
 
 ---
 

@@ -1,4 +1,4 @@
-OUTPUT 1 — Student 1 Handoff
+OUTPUT 1 — Module 1 Handoff
 
 Input:
 NCBI ClinVar GRCh38 VCF
@@ -36,4 +36,4 @@ IMPORTANT NOTES FOR STUDENT 2:
 5. The educational score is NOT a clinical diagnosis.
 
 Next step:
-Student 2 will perform normalization and gnomAD frequency matching.
+Module 2 will perform normalization and gnomAD frequency matching.

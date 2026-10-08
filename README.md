@@ -1,6 +1,6 @@
 # A Reproducible Workflow for Prioritizing Cancer-Associated Variants Using ClinVar and gnomAD
 
-**Five-Student Collaborative Bioinformatics Project**
+**Five-Module Collaborative Bioinformatics Project**
 
 **Genome assembly:** GRCh38
 **Gene panel:** BRCA1, BRCA2, PALB2, TP53
@@ -22,15 +22,15 @@ Develop a reproducible workflow that:
 
 ---
 
-## Team Division (5 Students)
+## Team Division (5 Modules)
 
-| Student | Responsibility | Output |
+| Module | Responsibility | Output |
 |---------|----------------|--------|
-| **Student 1** | Dataset preparation, VCF inspection, initial QC | Validated VCF + documentation |
-| **Student 2** | Filtering + Normalization | Filtered + normalized VCF |
-| **Student 3** | Annotation + Data extraction | Annotated TSV table |
-| **Student 4** | Variant prioritization + Scoring | Ranked + scored table |
-| **Student 5** | Results + Snakemake automation | Final pipeline + report |
+| **Module 1** | Dataset preparation, VCF inspection, initial QC | Validated VCF + documentation |
+| **Module 2** | Filtering + Normalization | Filtered + normalized VCF |
+| **Module 3** | Annotation + Data extraction | Annotated TSV table |
+| **Module 4** | Variant prioritization + Scoring | Ranked + scored table |
+| **Module 5** | Results + Snakemake automation | Final pipeline + report |
 
 ---
 
@@ -46,7 +46,7 @@ Develop a reproducible workflow that:
     conda env create -f environment_simple.yml
     conda activate cancer-vcf
 
-### 3. Run the full workflow (once Student 5 completes the Snakefile)
+### 3. Run the full workflow (once Module 5 completes the Snakefile)
 
     snakemake -s workflow/Snakefile --cores 2
 
@@ -108,26 +108,26 @@ Develop a reproducible workflow that:
     ClinVar GRCh38 VCF
          |
          v
-    [Student 1] Dataset Preparation + Initial QC
+    [Module 1] Dataset Preparation + Initial QC
          |
          v
-    [Student 2] Filtering + Normalization
+    [Module 2] Filtering + Normalization
          |
          v
-    [Student 3] Annotation + Data Extraction
+    [Module 3] Annotation + Data Extraction
          |
          v
-    [Student 4] Prioritization + Scoring
+    [Module 4] Prioritization + Scoring
          |
          v
-    [Student 5] Snakemake Automation + Reports
+    [Module 5] Snakemake Automation + Reports
          |
          v
     Final Deliverables
 
 ---
 
-## What Student 1 Did (Complete)
+## What Module 1 Did (Complete)
 
 - Downloaded ClinVar GRCh38 VCF from NCBI (2026-09-14)
 - Extracted 4 gene regions: BRCA1, BRCA2, PALB2, TP53
@@ -138,7 +138,7 @@ Develop a reproducible workflow that:
 - Created balanced teaching subset: 120 variants
 - Documented everything for reproducibility
 
-### Student 1 Output Files
+### Module 1 Output Files
 
 | File | Description | Records |
 |------|-------------|---------|
@@ -150,29 +150,29 @@ Develop a reproducible workflow that:
 
 ---
 
-## What Students 2–5 Will Do
+## What Modules 2–5 Will Do
 
-### Student 2 — Filtering + Normalization
+### Module 2 — Filtering + Normalization
 - Define filtering criteria
 - Apply filters
 - Normalize variants with GRCh38 reference
 - Left-align indels
 - Split multiallelic variants
 
-### Student 3 — Annotation + Data Extraction
+### Module 3 — Annotation + Data Extraction
 - Annotate variants with gene, CLNSIG, review status
 - Add frequency information
 - Perform annotation QC
 - Extract important fields to TSV table
 
-### Student 4 — Prioritization + Scoring
+### Module 4 — Prioritization + Scoring
 - Define prioritization strategy
 - Build transparent scoring system
 - Apply scores to all variants
 - Rank variants
 - Identify high-priority variants
 
-### Student 5 — Results + Snakemake
+### Module 5 — Results + Snakemake
 - Combine all results
 - Create Snakemake workflow
 - Generate figures and reports
@@ -192,12 +192,12 @@ Develop a reproducible workflow that:
 
 ---
 
-## Important Notes for All Students
+## Important Notes for All Modules
 
-1. **Only Student 1** has the raw ClinVar data (large files are not on GitHub).
+1. **Only Module 1** has the raw ClinVar data (large files are not on GitHub).
 2. Each student's handoff file is in `docs/student_handoffs/`.
 3. Each student's script is in `scripts/studentN_*.sh` or `.py`.
-4. **Student 5** connects all scripts into the Snakemake workflow.
+4. **Module 5** connects all scripts into the Snakemake workflow.
 5. All students must document their work.
 6. Create a branch for your work: `studentN-work`.
 
@@ -219,7 +219,7 @@ Each student should:
 
     # 4. Commit and push
     git add .
-    git commit -m "Student 2: filtering and normalization"
+    git commit -m "Module 2: filtering and normalization"
     git push origin student2-work
 
     # 5. Open a Pull Request on GitHub

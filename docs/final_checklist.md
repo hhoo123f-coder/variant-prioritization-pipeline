@@ -1,6 +1,6 @@
 # Final Quality Control Checklist
 
-**Student 1 — Dataset Preparation and Initial QC**
+**Module 1 — Dataset Preparation and Initial QC**
 **Date:** 2026-09-27
 
 ---
@@ -82,7 +82,7 @@
 - [x] Numeric chromosome names used
 - [x] Educational disclaimer included
 
-## 10. Handoff to Student 2
+## 10. Handoff to Module 2
 
 - [x] HANDOFF_NOTES.md contains clear instructions
 - [x] Known pitfalls documented (QUAL, DP, chr prefix)
@@ -95,7 +95,7 @@
 
 | Role | Name | Date |
 |------|------|------|
-| Student 1 | Alhanouf | 2026-09-27 |
+| Module 1 | Alhanouf | 2026-09-27 |
 
 ---
 

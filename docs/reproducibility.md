@@ -1,7 +1,7 @@
 # Reproducibility Guide
 
 **Project:** A Reproducible Workflow for Prioritizing Cancer-Associated Variants Using ClinVar and gnomAD
-**Student 1:** Dataset Preparation, VCF Inspection, Validation, Filtering, and Initial QC
+**Module 1:** Dataset Preparation, VCF Inspection, Validation, Filtering, and Initial QC
 **Date:** 2026-09-27
 **Genome:** GRCh38
 
@@ -9,7 +9,7 @@
 
 ## Goal
 
-Enable any other student to fully reproduce the Student 1 workflow from scratch and obtain identical results.
+Enable any other student to fully reproduce the Module 1 workflow from scratch and obtain identical results.
 
 ---
 
@@ -67,7 +67,7 @@ Recorded in docs/software_versions.txt.
 | Download date | 2026-09-14 |
 | Processing date | 2026-09-27 |
 
-| Population source | gnomAD v4.1 (used by Student 2) |
+| Population source | gnomAD v4.1 (used by Module 2) |
 
 ---
 
@@ -138,7 +138,7 @@ To obtain identical variant IDs, use a random seed.
 
 - Do NOT commit VCF files to GitHub
 - Do NOT use QUAL or DP filters (not present in ClinVar)
-- Match gnomAD with CHROM + POS + REF + ALT (Student 2)
+- Match gnomAD with CHROM + POS + REF + ALT (Module 2)
 
 ---
 

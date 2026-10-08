@@ -1,13 +1,13 @@
 # Data Description
 
-**Student 1 — Dataset Preparation and Initial QC**
+**Module 1 — Dataset Preparation and Initial QC**
 **Date:** 2026-09-27
 
 ---
 
 ## 1. Overview
 
-This document describes the ClinVar GRCh38 dataset prepared by Student 1 for the cancer variant prioritization project.
+This document describes the ClinVar GRCh38 dataset prepared by Module 1 for the cancer variant prioritization project.
 
 ---
 

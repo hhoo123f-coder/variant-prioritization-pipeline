@@ -1,7 +1,7 @@
 Cancer Variant Analysis and Prioritization Project
 
-Student role:
-Student 1 - Dataset Preparation, VCF Inspection, Validation, Filtering, and Initial QC
+Module role:
+Module 1 - Dataset Preparation, VCF Inspection, Validation, Filtering, and Initial QC
 
 Data source:
 NCBI ClinVar
@@ -49,4 +49,4 @@ Tools:
 bcftools 1.24, tabix 1.24, Python 3.14.7
 
 Next step:
-Student 2 will normalize variants and add gnomAD population-frequency evidence.
+Module 2 will normalize variants and add gnomAD population-frequency evidence.
