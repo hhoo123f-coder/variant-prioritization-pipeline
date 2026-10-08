@@ -1,6 +1,6 @@
-# A Reproducible Workflow for Prioritizing Cancer-Associated Variants Using ClinVar and gnomAD
+# Variant Prioritization Pipeline
 
-**Five-Module Collaborative Bioinformatics Project**
+A reproducible bioinformatics pipeline for prioritizing genetic variants using clinical annotations (ClinVar) and population frequency (gnomAD).
 
 **Genome assembly:** GRCh38
 **Gene panel:** BRCA1, BRCA2, PALB2, TP53
