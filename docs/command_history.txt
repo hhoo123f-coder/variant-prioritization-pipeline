@@ -1,0 +1,200 @@
+ 1057  rm -f data/processed/breast_cancer_small_ClinVar_GRCh38.vcf.gz
+ 1058  rm -f data/processed/breast_cancer_small_ClinVar_GRCh38.vcf.gz.tbi
+ 1059  TMP_VCF=/tmp/small_panel.vcf
+ 1060  rm -f $TMP_VCF
+ 1061  bcftools view -h data/processed/breast_cancer_ClinVar_GRCh38.vcf.gz > $TMP_VCF
+ 1062  for gene in BRCA1 BRCA2 PALB2 TP53; do   case $gene in     BRCA1) REGION="17:43044295-43170327";;     BRCA2) REGION="13:32315474-32400266";;     PALB2) REGION="16:23603165-23641310";;     TP53)  REGION="17:7668421-7687490";;   esac;    for sig in "Pathogenic" "Likely_pathogenic" "Uncertain_significance"; do     bcftools view -H       -i "INFO/CLNSIG=\"$sig\""       -r "$REGION"       data/processed/breast_cancer_ClinVar_GRCh38.vcf.gz       | shuf -n 10 >> $TMP_VCF;   done; done
+ 1063  bcftools view -Oz -o data/processed/breast_cancer_small_ClinVar_GRCh38.vcf.gz $TMP_VCF
+ 1064  tabix -p vcf data/processed/breast_cancer_small_ClinVar_GRCh38.vcf.gz
+ 1065  rm -f data/processed/breast_cancer_small_ClinVar_GRCh38.vcf.gz
+ 1066  rm -f data/processed/breast_cancer_small_ClinVar_GRCh38.vcf.gz.tbi
+ 1067  TMP_VCF=/tmp/small_panel.vcf
+ 1068  rm -f $TMP_VCF
+ 1069  bcftools view -h data/processed/breast_cancer_ClinVar_GRCh38.vcf.gz > $TMP_VCF
+ 1070  for gene in BRCA1 BRCA2 PALB2 TP53; do   case $gene in     BRCA1) REGION="17:43044295-43170327";;     BRCA2) REGION="13:32315474-32400266";;     PALB2) REGION="16:23603165-23641310";;     TP53)  REGION="17:7668421-7687490";;   esac;    for sig in "Pathogenic" "Likely_pathogenic" "Uncertain_significance"; do     bcftools view -H       -i "INFO/CLNSIG=\"$sig\""       -r "$REGION"       data/processed/breast_cancer_ClinVar_GRCh38.vcf.gz       | shuf -n 10 >> $TMP_VCF;   done; done
+ 1071  bcftools sort $TMP_VCF -Oz -o data/processed/breast_cancer_small_ClinVar_GRCh38.vcf.gz
+ 1072  tabix -p vcf data/processed/breast_cancer_small_ClinVar_GRCh38.vcf.gz
+ 1073  rm -f $TMP_VCF
+ 1074  rm -rf /tmp/bcftools.*
+ 1075  bcftools view -H data/processed/breast_cancer_small_ClinVar_GRCh38.vcf.gz | wc -l
+ 1076  bcftools query -f '%INFO/CLNSIG\n' data/processed/breast_cancer_small_ClinVar_GRCh38.vcf.gz | sort | uniq -c
+ 1077  bcftools query -f '%INFO/GENEINFO\n' data/processed/breast_cancer_small_ClinVar_GRCh38.vcf.gz | sort | uniq -c
+ 1078  bcftools query -f '%CHROM\n' data/processed/breast_cancer_small_ClinVar_GRCh38.vcf.gz | sort | uniq -c
+ 1079  ls -lh data/processed/breast_cancer_small_ClinVar_GRCh38.vcf.gz*
+ 1080  bcftools stats data/processed/breast_cancer_small_ClinVar_GRCh38.vcf.gz > results/reports/vcf_stats_small.txt
+ 1081  bcftools query -f '%CHROM\t%POS\t%REF\t%ALT\t%INFO/GENEINFO\t%INFO/CLNSIG\t%INFO/CLNREVSTAT\n' data/processed/breast_cancer_small_ClinVar_GRCh38.vcf.gz | head -10
+ 1082  nano data_description.txt
+ 1083  nano HANDOFF_NOTES.md
+ 1084  cat HANDOFF_NOTES.md | head -20
+ 1085  ls
+ 1086  rm -f HANDOFF_NOTES.md
+ 1087  rm -f output_1
+ 1088  rm -f output_1.tar.gz
+ 1089  rm -f output_1.txt
+ 1090  rm -f data_description.txt
+ 1091  rm -rf output_1
+ 1092  ls -lh
+ 1093  cat > HANDOFF_NOTES.md << 'EOF'
+ 1094  # Handoff Notes — Student 1 to Student 2
+ 1095  ## Delivered Files
+ 1096  | File | Description |
+ 1097  |------|-------------|
+ 1098  | data/processed/breast_cancer_small_ClinVar_GRCh38.vcf.gz | Ready-to-analyze file (120 variants) |
+ 1099  | data/processed/breast_cancer_small_ClinVar_GRCh38.vcf.gz.tbi | Tabix index |
+ 1100  | results/reports/vcf_stats_small.txt | Statistics of the filtered file |
+ 1101  | software_versions.txt | Tool versions |
+ 1102  | data_description.txt | Dataset description |
+ 1103  | output_1.txt | Handoff summary |
+ 1104  ## Work Completed
+ 1105  1. Downloaded ClinVar GRCh38 VCF (2026-09-14)
+ 1106  2. Extracted regions for BRCA1, BRCA2, PALB2, TP53
+ 1107  3. Compressed and indexed the file (47,428 records)
+ 1108  4. Applied CLNSIG filter to keep only:
+ 1109     - Pathogenic
+ 1110     - Likely_pathogenic
+ 1111     - Uncertain_significance
+ 1112  5. Selected a balanced sample: 10 variants per gene per class = 120 variants
+ 1113  6. Sorted the file and indexed it with tabix
+ 1114  7. Validated the file and generated statistics
+ 1115  ## Final Distribution
+ 1116  ### By Clinical Significance
+ 1117  | Category | Count |
+ 1118  |----------|-------|
+ 1119  | Pathogenic | 40 |
+ 1120  | Likely_pathogenic | 40 |
+ 1121  | Uncertain_significance | 40 |
+ 1122  | Total | 120 |
+ 1123  ### By Gene
+ 1124  | Gene | Count |
+ 1125  |------|-------|
+ 1126  | BRCA1 | 30 |
+ 1127  | BRCA2 | 30 |
+ 1128  | PALB2 | 30 |
+ 1129  | TP53 | 30 |
+ 1130  ## Important Notes for Student 2
+ 1131  ### DO NOT use:
+ 1132  - QUAL filter — not present in ClinVar
+ 1133  - DP filter — not present in ClinVar
+ 1134  - Position-only matching — use CHROM+POS+REF+ALT
+ 1135  ### DO use:
+ 1136  - File: breast_cancer_small_ClinVar_GRCh38.vcf.gz
+ 1137  - Four-field matching: CHROM, POS, REF, ALT
+ 1138  - CLNSIG filter if additional filtering is needed
+ 1139  ### Technical Notes:
+ 1140  1. Chromosome names are numeric: 13, 16, 17 (no chr prefix)
+ 1141  2. CLNSIG syntax: use INFO/CLNSIG="Pathogenic" NOT CLNSIG="Pathogenic"
+ 1142  3. GENEINFO may contain overlapping genes: e.g., BRCA1:672|LOC126862571:126862571
+ 1143  ## Commands to Verify the File
+ 1144  bcftools view -H data/processed/breast_cancer_small_ClinVar_GRCh38.vcf.gz | wc -l
+ 1145  bcftools query -f '%INFO/CLNSIG\n' data/processed/breast_cancer_small_ClinVar_GRCh38.vcf.gz | sort | uniq -c
+ 1146  bcftools query -f '%INFO/GENEINFO\n' data/processed/breast_cancer_small_ClinVar_GRCh38.vcf.gz | sort | uniq -c
+ 1147  bcftools query -f '%CHROM\t%POS\t%REF\t%ALT\t%INFO/GENEINFO\t%INFO/CLNSIG\n' data/processed/breast_cancer_small_ClinVar_GRCh38.vcf.gz | head -5
+ 1148  ## If You Get Zero Results
+ 1149  Send me the exact command you ran, and I will help.
+ 1150  ## Reminder
+ 1151  This is an educational analysis, not a clinical diagnosis. Educational scores do not mean a variant is truly pathogenic.
+ 1152  Good luck!
+ 1153  EOF
+ 1154  wc -l HANDOFF_NOTES.md
+ 1155  cat HANDOFF_NOTES.md | head -10
+ 1156  cat > data_description.txt << 'EOF'
+ 1157  Cancer Variant Analysis and Prioritization Project
+ 1158  Student role:
+ 1159  Student 1 - Dataset Preparation, VCF Inspection, Validation, Filtering, and Initial QC
+ 1160  Data source:
+ 1161  NCBI ClinVar
+ 1162  Source URL:
+ 1163  https://ftp.ncbi.nlm.nih.gov/pub/clinvar/vcf_GRCh38/
+ 1164  Date of data download:
+ 1165  2026-09-14
+ 1166  Date of filtering:
+ 1167  2026-09-27
+ 1168  Genome assembly:
+ 1169  GRCh38
+ 1170  Selected genes:
+ 1171  BRCA1, BRCA2, PALB2, TP53
+ 1172  Input:
+ 1173  data/raw/clinvar.vcf.gz
+ 1174  Intermediate output (unfiltered):
+ 1175  data/processed/breast_cancer_ClinVar_GRCh38.vcf.gz
+ 1176  Records: 47,428
+ 1177  Final output (filtered, ready for analysis):
+ 1178  data/processed/breast_cancer_small_ClinVar_GRCh38.vcf.gz
+ 1179  Records: 120
+ 1180  Filtering applied:
+ 1181  - Kept only: Pathogenic, Likely_pathogenic, Uncertain_significance
+ 1182  - Sampled: 10 variants per gene per class
+ 1183  Final distribution:
+ 1184  - Pathogenic: 40
+ 1185  - Likely_pathogenic: 40
+ 1186  - Uncertain_significance: 40
+ 1187  - BRCA1: 30
+ 1188  - BRCA2: 30
+ 1189  - PALB2: 30
+ 1190  - TP53: 30
+ 1191  Tools:
+ 1192  bcftools 1.24, tabix 1.24, Python 3.14.7
+ 1193  Next step:
+ 1194  Student 2 will normalize variants and add gnomAD population-frequency evidence.
+ 1195  EOF
+ 1196  cat > output_1.txt << 'EOF'
+ 1197  OUTPUT 1 — Student 1 Handoff
+ 1198  Input:
+ 1199  NCBI ClinVar GRCh38 VCF
+ 1200  Prepared outputs:
+ 1201  - data/processed/breast_cancer_ClinVar_GRCh38.vcf.gz  (47,428 records, unfiltered)
+ 1202  - data/processed/breast_cancer_small_ClinVar_GRCh38.vcf.gz  (120 records, filtered)
+ 1203  - data/processed/breast_cancer_small_ClinVar_GRCh38.vcf.gz.tbi
+ 1204  Genes:
+ 1205  BRCA1, BRCA2, PALB2, TP53
+ 1206  Genome assembly:
+ 1207  GRCh38
+ 1208  Variant records:
+ 1209  - Before clinical filter: 47,428
+ 1210  - After clinical filter and sampling: 120
+ 1211  Filtering applied:
+ 1212  - Kept: Pathogenic, Likely_pathogenic, Uncertain_significance
+ 1213  - Sampled: 10 variants per gene per class
+ 1214  Final distribution:
+ 1215  - Pathogenic: 40
+ 1216  - Likely_pathogenic: 40
+ 1217  - Uncertain_significance: 40
+ 1218  - BRCA1: 30 | BRCA2: 30 | PALB2: 30 | TP53: 30
+ 1219  IMPORTANT NOTES FOR STUDENT 2:
+ 1220  1. Use ONLY breast_cancer_small_ClinVar_GRCh38.vcf.gz for analysis.
+ 1221  2. Do NOT apply QUAL or DP filters — ClinVar does not contain these fields.
+ 1222  3. Match gnomAD using CHROM, POS, REF, ALT (not position alone).
+ 1223  4. Chromosome names in the VCF are numeric (13, 16, 17) — no chr prefix.
+ 1224  5. The educational score is NOT a clinical diagnosis.
+ 1225  Next step:
+ 1226  Student 2 will perform normalization and gnomAD frequency matching.
+ 1227  EOF
+ 1228  ls -lh data_description.txt output_1.txt
+ 1229  wc -l data_description.txt output_1.txt
+ 1230  cat data_description.txt | head -10
+ 1231  cat output_1.txt | head -10
+ 1232  tar -czvf student1_handoff.tar.gz   data/processed/breast_cancer_small_ClinVar_GRCh38.vcf.gz   data/processed/breast_cancer_small_ClinVar_GRCh38.vcf.gz.tbi   results/reports/vcf_stats_small.txt   software_versions.txt   data_description.txt   output_1.txt   HANDOFF_NOTES.md
+ 1233  find . -name "software_versions.txt"
+ 1234  find . -name "*version*"
+ 1235  ls -lh docs/
+ 1236  ls -lh results/
+ 1237  tar -czvf student1_handoff.tar.gz   data/processed/breast_cancer_small_ClinVar_GRCh38.vcf.gz   data/processed/breast_cancer_small_ClinVar_GRCh38.vcf.gz.tbi   results/reports/vcf_stats_small.txt   docs/software_versions.txt   data_description.txt   output_1.txt   HANDOFF_NOTES.md
+ 1238  ls -lh student1_handoff.tar.gz
+ 1239  tar -tzvf student1_handoff.tar.gz
+ 1240  cp docs/software_versions.txt software_versions.txt
+ 1241  ls -lh software_versions.txt
+ 1242  tar -czvf student1_handoff.tar.gz   data/processed/breast_cancer_small_ClinVar_GRCh38.vcf.gz   data/processed/breast_cancer_small_ClinVar_GRCh38.vcf.gz.tbi   results/reports/vcf_stats_small.txt   software_versions.txt   data_description.txt   output_1.txt   HANDOFF_NOTES.md
+ 1243  cat docs/software_versions.txt
+ 1244  tar -czvf student1_handoff.tar.gz   data/processed/breast_cancer_small_ClinVar_GRCh38.vcf.gz   data/processed/breast_cancer_small_ClinVar_GRCh38.vcf.gz.tbi   results/reports/vcf_stats_small.txt   docs/software_versions.txt   data_description.txt   output_1.txt   HANDOFF_NOTES.md
+ 1245  ls -lh student1_handoff.tar.gz
+ 1246  tar -tzvf student1_handoff.tar.gz
+ 1247  pwd
+ 1248  ls -lh student1_handoff.tar.gz
+ 1249  ls /mnt/c/Users/
+ 1250  cp student1_handoff.tar.gz /mnt/c/Users/hhoo1/Desktop/
+ 1251  ls /mnt/c/Users/hhoo1/
+ 1252  cp student1_handoff.tar.gz /mnt/c/Users/hhoo1/OneDrive/
+ 1253  ls /mnt/c/Users/hhoo1/OneDrive/
+ 1254  ls -lh /mnt/c/Users/hhoo1/OneDrive/student1_handoff.tar.gz
+ 1255  cd ~/cancer-vcf-project
+ 1256  history | tail -200 > ~/cancer-vcf-project/docs/command_history.txt

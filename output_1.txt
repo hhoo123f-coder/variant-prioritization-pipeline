@@ -1,0 +1,39 @@
+OUTPUT 1 — Student 1 Handoff
+
+Input:
+NCBI ClinVar GRCh38 VCF
+
+Prepared outputs:
+- data/processed/breast_cancer_ClinVar_GRCh38.vcf.gz  (47,428 records, unfiltered)
+- data/processed/breast_cancer_small_ClinVar_GRCh38.vcf.gz  (120 records, filtered)
+- data/processed/breast_cancer_small_ClinVar_GRCh38.vcf.gz.tbi
+
+Genes:
+BRCA1, BRCA2, PALB2, TP53
+
+Genome assembly:
+GRCh38
+
+Variant records:
+- Before clinical filter: 47,428
+- After clinical filter and sampling: 120
+
+Filtering applied:
+- Kept: Pathogenic, Likely_pathogenic, Uncertain_significance
+- Sampled: 10 variants per gene per class
+
+Final distribution:
+- Pathogenic: 40
+- Likely_pathogenic: 40
+- Uncertain_significance: 40
+- BRCA1: 30 | BRCA2: 30 | PALB2: 30 | TP53: 30
+
+IMPORTANT NOTES FOR STUDENT 2:
+1. Use ONLY breast_cancer_small_ClinVar_GRCh38.vcf.gz for analysis.
+2. Do NOT apply QUAL or DP filters — ClinVar does not contain these fields.
+3. Match gnomAD using CHROM, POS, REF, ALT (not position alone).
+4. Chromosome names in the VCF are numeric (13, 16, 17) — no chr prefix.
+5. The educational score is NOT a clinical diagnosis.
+
+Next step:
+Student 2 will perform normalization and gnomAD frequency matching.

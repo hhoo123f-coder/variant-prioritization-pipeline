@@ -1,0 +1,93 @@
+# Large genomic data — DO NOT commit
+data/raw/*.vcf
+data/raw/*.vcf.gz
+data/raw/*.vcf.bgz
+data/raw/*.bcf
+data/raw/*.tbi
+data/raw/*.csi
+data/processed/*.vcf
+data/processed/*.vcf.gz
+data/processed/*.vcf.bgz
+data/processed/*.bcf
+data/processed/*.tbi
+data/processed/*.csi
+
+# Archives
+*.tar.gz
+*.zip
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.pytest_cache/
+.ipynb_checkpoints/
+
+# Conda / Environment
+.conda/
+.env
+
+# Temporary files
+*.tmp
+*.log
+*.swp
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Snakemake
+.snakemake/
+EOFcd ~/cancer-vcf-project
+
+cat > .gitignore << 'EOF'
+# Large genomic data — DO NOT commit
+data/raw/*.vcf
+data/raw/*.vcf.gz
+data/raw/*.vcf.bgz
+data/raw/*.bcf
+data/raw/*.tbi
+data/raw/*.csi
+data/processed/*.vcf
+data/processed/*.vcf.gz
+data/processed/*.vcf.bgz
+data/processed/*.bcf
+data/processed/*.tbi
+data/processed/*.csi
+
+# Archives
+*.tar.gz
+*.zip
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.pytest_cache/
+.ipynb_checkpoints/
+
+# Conda / Environment
+.conda/
+.env
+
+# Temporary files
+*.tmp
+*.log
+*.swp
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Snakemake
+.snakemake/
+
+# R
+.Rhistory
+.RData
+.Rproj.user
+
+# Duplicates
+docs/environment.yml

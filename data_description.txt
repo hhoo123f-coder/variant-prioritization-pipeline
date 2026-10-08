@@ -1,0 +1,52 @@
+Cancer Variant Analysis and Prioritization Project
+
+Student role:
+Student 1 - Dataset Preparation, VCF Inspection, Validation, Filtering, and Initial QC
+
+Data source:
+NCBI ClinVar
+
+Source URL:
+https://ftp.ncbi.nlm.nih.gov/pub/clinvar/vcf_GRCh38/
+
+Date of data download:
+2026-09-14
+
+Date of filtering:
+2026-09-27
+
+Genome assembly:
+GRCh38
+
+Selected genes:
+BRCA1, BRCA2, PALB2, TP53
+
+Input:
+data/raw/clinvar.vcf.gz
+
+Intermediate output (unfiltered):
+data/processed/breast_cancer_ClinVar_GRCh38.vcf.gz
+Records: 47,428
+
+Final output (filtered, ready for analysis):
+data/processed/breast_cancer_small_ClinVar_GRCh38.vcf.gz
+Records: 120
+
+Filtering applied:
+- Kept only: Pathogenic, Likely_pathogenic, Uncertain_significance
+- Sampled: 10 variants per gene per class
+
+Final distribution:
+- Pathogenic: 40
+- Likely_pathogenic: 40
+- Uncertain_significance: 40
+- BRCA1: 30
+- BRCA2: 30
+- PALB2: 30
+- TP53: 30
+
+Tools:
+bcftools 1.24, tabix 1.24, Python 3.14.7
+
+Next step:
+Student 2 will normalize variants and add gnomAD population-frequency evidence.
