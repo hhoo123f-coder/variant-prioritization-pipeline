@@ -55,4 +55,3 @@ See `scripts/module3_annotate_extract.py`
 
 ---
 
-*Educational project — not for clinical diagnosis.*

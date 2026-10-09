@@ -38,7 +38,7 @@ Develop a reproducible workflow that:
 
 ### 1. Clone the repository
 
-    git clone git@github.com:hhoo123f-coder/cancer-vcf-project.git
+    git clone https://github.com/hhoo123f-coder/variant-prioritization-pipeline.git
     cd cancer-vcf-project
 
 ### 2. Create the Conda environment
@@ -208,7 +208,7 @@ Develop a reproducible workflow that:
 Each student should:
 
     # 1. Clone the repository
-    git clone git@github.com:hhoo123f-coder/cancer-vcf-project.git
+    git clone https://github.com/hhoo123f-coder/variant-prioritization-pipeline.git
     cd cancer-vcf-project
 
     # 2. Create your branch
@@ -232,4 +232,3 @@ This project ranks variants using public ClinVar assertions, gnomAD population f
 
 ---
 
-*Educational project — not for clinical diagnosis.*

@@ -48,4 +48,3 @@ See `scripts/module4_prioritize.py`
 
 ---
 
-*Educational project — not for clinical diagnosis.*

@@ -54,4 +54,3 @@ See `scripts/module2_filter_normalize.sh`
 
 ---
 
-*Educational project — not for clinical diagnosis.*

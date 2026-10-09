@@ -153,4 +153,3 @@ To obtain identical variant IDs, use a random seed.
 
 ---
 
-Educational project — not for clinical diagnosis.

@@ -117,4 +117,3 @@ This document describes the ClinVar GRCh38 dataset prepared by Module 1 for the 
 
 ---
 
-Educational project — not for clinical diagnosis.

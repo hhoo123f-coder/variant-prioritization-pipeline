@@ -51,4 +51,3 @@ See `scripts/module5_snakemake.sh`
 
 ---
 
-*Educational project — not for clinical diagnosis.*

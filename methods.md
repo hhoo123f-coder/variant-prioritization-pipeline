@@ -180,4 +180,3 @@ This is an educational bioinformatics workflow. The results are not intended for
 
 ---
 
-Educational project — not for clinical diagnosis.

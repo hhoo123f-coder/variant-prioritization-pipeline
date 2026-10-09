@@ -99,4 +99,3 @@
 
 ---
 
-Educational project — not for clinical diagnosis.
