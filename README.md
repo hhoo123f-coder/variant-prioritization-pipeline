@@ -211,8 +211,8 @@ Each student should:
     git clone https://github.com/hhoo123f-coder/variant-prioritization-pipeline.git
     cd cancer-vcf-project
 
-    # 2. Create your branch
-    git checkout -b student2-work
+    # 2. Switch to your branch
+    git checkout module2-work
 
     # 3. Do your work
     # ...
@@ -220,7 +220,7 @@ Each student should:
     # 4. Commit and push
     git add .
     git commit -m "Module 2: filtering and normalization"
-    git push origin student2-work
+    git push origin module2-work
 
     # 5. Open a Pull Request on GitHub
 
