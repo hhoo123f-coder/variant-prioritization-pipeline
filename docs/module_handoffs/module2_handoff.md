@@ -1,56 +1,84 @@
-# Module 2 Handoff — Filtering & Normalization
-
-**Responsible Module:** Module 2 — Filtering & Normalization
-**Status:** Pending completion
-**Date:** [To be filled]
-
----
-
-## Input from Module 1
-
-### Primary file
-`data/processed/breast_cancer_ClinVar_GRCh38.vcf.gz`
-- 47,428 records
-- Genes: BRCA1, BRCA2, PALB2, TP53
-- No clinical filtering applied
-- Chromosome names: numeric (13, 16, 17)
-
-### Optional pre-filtered subset
-`data/processed/breast_cancer_small_ClinVar_GRCh38.vcf.gz`
-- 120 records
-- Pathogenic + Likely_pathogenic + VUS
-- Balanced: 30 per gene, 40 per class
+# Module 2 — Handoff Summary (Normalization)
+Student: Kholud  
+Date: 11 October 2026  
+Module: 2 — Variant Normalization  
+Next Module: 3 — Variant Annotation (Raghad)
 
 ---
 
-## Tasks
+## 1. Overview
 
-1. **Filtering**
-   - Define filtering criteria
-   - Apply filters
-   - Record before → after counts
-   - Justify each filter
-
-2. **Normalization**
-   - Use GRCh38 reference genome
-   - Left-align indels
-   - Split multiallelic variants
-   - Verify output
+This handoff summarizes the output of Module 2 (VCF normalization).  
+The filtered ClinVar GRCh38 breast cancer dataset was normalized using bcftools and aligned to the GRCh38 reference genome.  
+The output is ready for Module 3 annotation.
 
 ---
 
-## Output (to be delivered to Module 3)
+## 2. Input Provided by Module 1 (Hanouf)
 
-- Filtered + Normalized VCF
-- `data/processed/breast_cancer_filtered_normalized.vcf.gz`
-- `.tbi` index
-- Documentation of filtering criteria
+- Filtered VCF file:  
+  `data/processed/breast_cancer_small_ClinVar_GRCh38.filtered.vcf.gz`
+
+- Genome assembly: GRCh38
+
+---
+
+## 3. Processing Performed in Module 2
+
+- Normalization using `bcftools norm`
+- Reference genome used:  
+  `data/processed/Homo_sapiens.GRCh38.dna.primary_assembly.fa`
+- Output compressed with bgzip
+- Output indexed with tabix
+- QC checks performed (header, reference match, record count, index generation)
 
 ---
 
-## Commands/Script
+## 4. Output Files for Module 3
 
-See `scripts/module2_filter_normalize.sh`
+These files must be used by the next student (Raghad):
+
+### **Normalized VCF**
+data/processed/breast_cancer_small_ClinVar_GRCh38.norm.vcf.gz
+
+
+### **Index File**
+
+data/processed/breast_cancer_small_ClinVar_GRCh38.norm.vcf.gz.tbi
+
+
+### **Record Count**
+- Number of variants: **120**
 
 ---
+
+## 5. Notes for Module 3 (Raghad)
+
+- The VCF is fully normalized and indexed.
+- No multiallelic variants required splitting.
+- No realignment or corrections were needed.
+- The file is ready for annotation using VEP, ANNOVAR, or bcftools query.
+- No errors or warnings were encountered during processing.
+
+---
+
+## 6. Reproducibility
+
+### Command used:
+bcftools norm -f data/processed/Homo_sapiens.GRCh38.dna.primary_assembly.fa \
+-Oz -o data/processed/breast_cancer_small_ClinVar_GRCh38.norm.vcf.gz \
+data/processed/breast_cancer_small_ClinVar_GRCh38.filtered.vcf.gz
+
+
+### Software versions:
+- bcftools 1.17  
+- htslib 1.17  
+- tabix 1.17  
+
+---
+
+## 7. Completion Status
+
+Module 2 is **fully completed**.  
+Output is ready for Module 3.
 
