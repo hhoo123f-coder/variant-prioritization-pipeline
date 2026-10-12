@@ -1,0 +1,40 @@
+Module 2 — Normalization Statistics
+Student: Kholud
+Date: 11 October 2026
+Genome Assembly: GRCh38
+
+Input File:
+  data/processed/breast_cancer_small_ClinVar_GRCh38.filtered.vcf.gz
+
+Reference Genome:
+  data/processed/Homo_sapiens.GRCh38.dna.primary_assembly.fa
+
+Output File:
+  data/processed/breast_cancer_small_ClinVar_GRCh38.norm.vcf.gz
+
+Record Counts:
+  Variants before normalization: 120
+  Variants after normalization: 120
+
+bcftools norm Summary:
+  Lines total: 120
+  Lines split: 0
+  Lines joined: 0
+  Lines realigned: 0
+  Lines skipped: 0
+
+Index File:
+  data/processed/breast_cancer_small_ClinVar_GRCh38.norm.vcf.gz.tbi
+
+Quality Checks:
+  - Input VCF readable: PASS
+  - Output VCF readable: PASS
+  - Header valid: PASS
+  - Reference genome matched: PASS
+  - Compression successful: PASS
+  - Tabix index generated: PASS
+
+Notes:
+  No multiallelic variants required splitting.
+  No realignment or corrections were needed.
+  Output VCF is ready for Module 3 annotation.
