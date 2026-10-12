@@ -1,0 +1,4 @@
+     28 criteria_provided,_multiple_submitters,_no_conflicts
+     65 criteria_provided,_single_submitter
+     11 no_assertion_criteria_provided
+     16 reviewed_by_expert_panel

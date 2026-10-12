@@ -1,0 +1,3 @@
+     40 Likely_pathogenic
+     40 Pathogenic
+     40 Uncertain_significance
