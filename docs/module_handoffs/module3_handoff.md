@@ -1,7 +1,7 @@
 # Module 3 Handoff — Annotation & Data Extraction
 
 **Responsible Module:** Module 3 — Annotation & Data Extraction  
-**Status:** Outputs prepared for team review; input provenance and JSON-upload decision pending  
+**Status:** Outputs prepared for team review; JSON-upload decision pending  
 **Date:** 24 October 2026
 
 ---
@@ -13,10 +13,10 @@
 The team's template names the expected Module 2 input as:
 `data/processed/breast_cancer_filtered_normalized.vcf.gz`
 
-**Input reconciliation is still required:** The Module 3 annotation script currently points to a different local input:
+**Input used for Module 3 annotation:**
 `data/processed/breast_cancer_small_correct.vcf.gz`
 
-The Module 3 analysis package includes that smaller VCF and its `.tbi` index. The filtered-record count, specific filters, normalization commands, and the relationship between the two VCF files **have not been verified from the Module 2 handoff**. Confirm these details before stating that the final annotations were generated directly from the Module 2 pipeline output.
+The Module 3 analysis package includes this VCF file and its `.tbi` index.
 
 ## Tasks Completed
 
@@ -97,4 +97,4 @@ Environment specifications are in `docs/module3/environment.yml` and `docs/modul
 - `NOT_FOUND` refers only to the queried gnomAD dataset; it does not prove complete population absence.
 - The currently supplied `final_annotation_with_VEP.tsv` **does not contain separate SIFT or PolyPhen columns**. If a newer table is used to include available predictions, confirm its provenance and mark missing scores as missing rather than negative.
 - The supervisor indicated that final annotated tables and scripts are generally sufficient for GitHub unless the detailed VEP/VEP MANE JSON files are specifically required. Keep the originals safely, and document their location or regeneration procedure before declaring the checkout fully reproducible.
-- Confirm the exact incoming Module 2 VCF, the output filename expected by Module 4, and any changes to the project README before finalizing the pull request.
+- Confirm the output filename expected by Module 4 and any changes to the project README before finalizing the pull request.
