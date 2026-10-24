@@ -1,0 +1,56 @@
+FINAL VARIANT ANNOTATION SUMMARY
+================================
+
+Project: Breast Cancer Genetic Variant Analysis
+Reference Genome: GRCh38
+
+1. DATASET
+Total variants: 120
+BRCA1: 30
+BRCA2: 30
+PALB2: 30
+TP53: 30
+
+2. CLINICAL ANNOTATION
+Source: ClinVar
+Clinical significance and variant information were extracted.
+
+3. POPULATION FREQUENCY
+Source: gnomAD r4 API
+Variants with available gnomAD AF: 14
+Variants not found in queried dataset: 106
+Genome AF values available: 2
+Exome AF values available: 13
+
+Additional source: ExAC fields from ClinVar
+Variants with ExAC AF: 3
+
+4. VEP ANNOTATION
+Method: Ensembl VEP REST API
+Reference: GRCh38
+Variants annotated: 120
+Transcript selection: MANE Select
+
+HIGH impact: 66
+MODERATE impact: 49
+LOW impact: 4
+MODIFIER impact: 1
+
+5. QUALITY CONTROL
+Total variants: 120
+Duplicate variant keys: 0
+VEP annotations validated: 120
+Clinical and frequency data preserved: YES
+
+6. LIMITATIONS
+- Missing AF values are not equivalent to zero.
+- NOT_FOUND means no matching variant was returned
+  by the queried gnomAD dataset.
+- VEP impact predicts molecular consequences
+  and is not a clinical pathogenicity classification.
+- Ensembl VEP was accessed through its REST API,
+  rather than local VEP cache execution.
+- Results are based on the selected 120 variants.
+
+7. FINAL OUTPUT
+results/tables/final_annotation_with_VEP.tsv
