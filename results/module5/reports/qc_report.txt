@@ -1,0 +1,40 @@
+QUALITY CONTROL REPORT
+============================================================
+Priority table rows: 120
+Priority table columns: 42
+Annotation table rows: 120
+Annotation table columns: 29
+Missing required priority columns: []
+Missing required annotation columns: []
+
+Priority categories:
+  High educational priority: 63
+  Intermediate educational priority: 28
+  Low or uncertain educational priority: 29
+
+gnomAD status counts:
+  FOUND: 14
+  MANUAL_REVIEW: 6
+  NOT_FOUND: 100
+
+ACMG/AMP review status counts:
+  NOT_INDEPENDENTLY_CLASSIFIED: 120
+
+Prediction status counts:
+  Both predictions available: 34
+  No predictions available: 1
+  Not applicable: 80
+  SIFT only: 5
+
+Variant key checks:
+  Unique priority keys: 120
+  Unique annotation keys: 120
+  Duplicate priority keys: 0
+  Duplicate annotation keys: 0
+
+Score and rank checks:
+  Score/rank inconsistencies: 0
+
+Final QC status:
+QC STRUCTURAL CHECKS PASSED
+Note: Structural checks do not establish clinical validity or biological correctness.

@@ -1,0 +1,8 @@
+Project Environment Versions
+============================
+Python: 3.11.17
+Snakemake: 9.27.0
+Matplotlib: 3.11.2
+pandas: 2.3.3
+Platform: macOS Apple Silicon (arm64)
+Conda environment: project4

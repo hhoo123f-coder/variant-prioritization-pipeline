@@ -1,0 +1,23 @@
+RESULTS SUMMARY
+==============================
+Total variants: 120
+
+Priority categories:
+  High educational priority: 63
+  Intermediate educational priority: 28
+  Low or uncertain educational priority: 29
+
+gnomAD statuses:
+  FOUND: 14
+  MANUAL_REVIEW: 6
+  NOT_FOUND: 100
+
+Gene counts:
+  BRCA1: 30
+  BRCA2: 30
+  PALB2: 30
+  TP53: 30
+
+Interpretation note:
+Priority categories are educational rankings, not independent clinical classifications.
+NOT_FOUND does not establish that a variant is pathogenic or absent from all populations.
