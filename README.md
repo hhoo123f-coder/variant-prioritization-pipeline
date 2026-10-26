@@ -1,4 +1,5 @@
-# Variant Prioritization Pipeline
+
+# Clinical Interpretation and Classification of Human Genetic Variants
 
 A reproducible bioinformatics pipeline for prioritizing genetic variants using clinical annotations (ClinVar) and population frequency (gnomAD).
 
