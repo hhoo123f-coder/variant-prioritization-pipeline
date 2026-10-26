@@ -80,7 +80,6 @@ cancer-vcf-project/
 |   `-- module5/
 |
 `-- tests/
-
 Final Results Summary
 
 Category | Count
