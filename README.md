@@ -70,7 +70,7 @@ Develop a reproducible workflow that:
     |   |-- data_description.md
     |   |-- reproducibility.md
     |   |-- final_checklist.md
-    |   `-- student_handoffs/
+    |   `-- module_handoffs/
     |       |-- student1_handoff.md
     |       |-- student2_handoff.md
     |       |-- student3_handoff.md
@@ -195,7 +195,7 @@ Develop a reproducible workflow that:
 ## Important Notes for All Modules
 
 1. **Only Module 1** has the raw ClinVar data (large files are not on GitHub).
-2. Each student's handoff file is in `docs/student_handoffs/`.
+2. Each student's handoff file is in `docs/module_handoffs/`.
 3. Each student's script is in `scripts/studentN_*.sh` or `.py`.
 4. **Module 5** connects all scripts into the Snakemake workflow.
 5. All students must document their work.

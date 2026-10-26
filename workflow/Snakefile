@@ -1,0 +1,37 @@
+rule all:
+    input:
+        "results/module5/reports/qc_report.txt",
+        "results/module5/tables/results_summary.tsv",
+        "results/module5/reports/results_summary.txt",
+        "results/module5/figures/priority_categories.png",
+        "results/module5/figures/gnomad_status.png",
+        "results/module5/figures/variant_counts_by_gene.png"
+
+
+rule quality_control:
+    input:
+        priority="data/module5/prioritized_variants.tsv",
+        annotations="data/module5/annotations_with_SIFT_PolyPhen.tsv",
+        script="scripts/module5/qc_results.py"
+    output:
+        report="results/module5/reports/qc_report.txt"
+    log:
+        "logs/module5/qc.log"
+    shell:
+        "python scripts/module5/qc_results.py > {output.report} 2> {log}"
+
+
+rule summarize_results:
+    input:
+        priority="data/module5/prioritized_variants.tsv",
+        script="scripts/module5/summarize_results.py"
+    output:
+        table="results/module5/tables/results_summary.tsv",
+        report="results/module5/reports/results_summary.txt",
+        priority_plot="results/module5/figures/priority_categories.png",
+        gnomad_plot="results/module5/figures/gnomad_status.png",
+        gene_plot="results/module5/figures/variant_counts_by_gene.png"
+    log:
+        "logs/module5/summarize_results.log"
+    shell:
+        "python scripts/module5/summarize_results.py > {log} 2>&1"
