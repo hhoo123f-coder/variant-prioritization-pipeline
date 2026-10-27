@@ -1,0 +1,11 @@
+Reference genome: GRCh38
+
+Reference FASTA:
+Homo sapiens GRCh38 primary assembly FASTA.
+The reference FASTA is not included in this submission.
+The original FASTA was stored outside the project repository.
+
+bcftools version: 1.19
+
+VEP version: To be confirmed from project records.
+gnomAD version/release: To be confirmed from project records.
