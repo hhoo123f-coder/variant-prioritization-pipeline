@@ -16,7 +16,7 @@ The pipeline has been fully implemented, executed, and validated. The final resu
 - **Total variants analyzed:** 120 (30 per gene).
 - **Priority Categories:** 63 High, 28 Intermediate, 29 Low/Uncertain.
 - **Quality Control:** 0 duplicate variants, 120 validated records, and all structural checks passed.
-- **Automation:** Fully automated using workflow/Snakefile.module5.
+- **Automation:** Fully automated using `workflow/Snakefile.module5`.
 
 ---
 
@@ -29,6 +29,25 @@ Develop a reproducible workflow that:
 4. Prioritizes variants using educational scoring.
 5. Automates everything with Snakemake.
 6. Produces reproducible tables, figures, and reports.
+
+---
+
+## Quick Start
+
+### 1. Clone the repository
+git clone https://github.com/hhoo123f-coder/variant-prioritization-pipeline.git
+cd variant-prioritization-pipeline
+
+### 2. Create the Conda environment
+conda env create -f environment_simple.yml
+conda activate cancer-vcf
+
+### 3. Run the full workflow (Module 5)
+snakemake -s workflow/Snakefile.module5 --cores 2
+
+### 4. View the generated reports and figures
+- **HTML Report:** results/module5/reports/snakemake_report.html
+- **Figures:** results/module5/figures/
 
 ---
 
@@ -74,25 +93,6 @@ cancer-vcf-project/
 
 
 
-
-## Quick Start
-
-### 1. Clone the repository
-git clone https://github.com/hhoo123f-coder/variant-prioritization-pipeline.git
-cd variant-prioritization-pipeline
-
-### 2. Create the Conda environment
-conda env create -f environment_simple.yml
-conda activate cancer-vcf
-
-### 3. Run the full workflow (Module 5)
-snakemake -s workflow/Snakefile.module5 --cores 2
-
-### 4. View the generated reports and figures
-- **HTML Report:** results/module5/reports/snakemake_report.html
-- **Figures:** results/module5/figures/
-
----
 
 ## Final Results Summary
 
