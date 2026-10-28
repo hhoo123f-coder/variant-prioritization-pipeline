@@ -33,7 +33,7 @@ Develop a reproducible workflow that:
 ---
 
 ## Project Structure
-
+'''
 cancer-vcf-project/
 |-- README.md
 |-- methods.md
@@ -69,9 +69,10 @@ cancer-vcf-project/
 |   |-- reports/
 |   `-- module5/
 |
-`-- tests/
+`-- tests/'''
 
----
+
+
 
 ## Quick Start
 
