@@ -69,7 +69,8 @@ cancer-vcf-project/
 |   |-- reports/
 |   `-- module5/
 |
-`-- tests/'''
+`-- tests/
+'''
 
 
 
