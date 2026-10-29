@@ -1,7 +1,7 @@
 Section	Category	Count
-Priority_Category	High educational priority	63
-Priority_Category	Intermediate educational priority	28
-Priority_Category	Low or uncertain educational priority	29
+Priority_Category	High Priority	63
+Priority_Category	Intermediate Priority	28
+Priority_Category	Low Priority	29
 GNOMAD_STATUS	FOUND	14
 GNOMAD_STATUS	MANUAL_REVIEW	6
 GNOMAD_STATUS	NOT_FOUND	100

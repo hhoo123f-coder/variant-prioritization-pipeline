@@ -8,9 +8,9 @@ Missing required priority columns: []
 Missing required annotation columns: []
 
 Priority categories:
-  High educational priority: 63
-  Intermediate educational priority: 28
-  Low or uncertain educational priority: 29
+  High Priority: 63
+  Intermediate Priority: 28
+  Low Priority: 29
 
 gnomAD status counts:
   FOUND: 14

@@ -7,12 +7,11 @@ matplotlib.use("Agg")
 import matplotlib.pyplot as plt
 
 
-BASE_DIR = Path(__file__).resolve().parents[2]
-MODULE_DIR = BASE_DIR / "results" / "module5"
-DATA_FILE = BASE_DIR / "data" / "module5" / "prioritized_variants.tsv"
-TABLES_DIR = MODULE_DIR / "tables"
-FIGURES_DIR = MODULE_DIR / "figures"
-REPORTS_DIR = MODULE_DIR / "reports"
+BASE_DIR = Path(__file__).resolve().parent.parent
+DATA_FILE = BASE_DIR / "data" / "prioritized_variants.tsv"
+TABLES_DIR = BASE_DIR / "results" / "tables"
+FIGURES_DIR = BASE_DIR / "results" / "figures"
+REPORTS_DIR = BASE_DIR / "results" / "reports"
 
 
 def main():
@@ -90,7 +89,7 @@ def main():
 
     make_bar_chart(
         category_counts,
-        "Distribution of Educational Priority Categories",
+        "Distribution of Priority Categories",
         "Priority category",
         "priority_categories.png",
     )
@@ -100,13 +99,6 @@ def main():
         "gnomAD Status Distribution",
         "gnomAD status",
         "gnomad_status.png",
-    )
-
-    make_bar_chart(
-        gene_counts,
-        "Variant Counts by Gene",
-        "Gene",
-        "variant_counts_by_gene.png",
     )
 
     report_file = REPORTS_DIR / "results_summary.txt"

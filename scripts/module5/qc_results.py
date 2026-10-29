@@ -2,9 +2,9 @@ import csv
 from collections import Counter
 from pathlib import Path
 
-BASE_DIR = Path(__file__).resolve().parents[2]
-DATA_DIR = BASE_DIR / "data" / "module5"
-RESULTS_DIR = BASE_DIR / "results" / "module5"
+BASE_DIR = Path(__file__).resolve().parents[1]
+DATA_DIR = BASE_DIR / "data"
+RESULTS_DIR = BASE_DIR / "results"
 REPORT_DIR = RESULTS_DIR / "reports"
 
 PRIORITY_FILE = DATA_DIR / "prioritized_variants.tsv"

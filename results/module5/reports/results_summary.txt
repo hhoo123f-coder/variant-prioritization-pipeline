@@ -3,9 +3,9 @@ RESULTS SUMMARY
 Total variants: 120
 
 Priority categories:
-  High educational priority: 63
-  Intermediate educational priority: 28
-  Low or uncertain educational priority: 29
+  High Priority: 63
+  Intermediate Priority: 28
+  Low Priority: 29
 
 gnomAD statuses:
   FOUND: 14
